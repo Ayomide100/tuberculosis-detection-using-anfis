@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+    <style>
+        input[type='text'], input[type='password']{
+            border-top: none !important;
+            border-left: none !important;
+            height: 30px;
+            font-size: 15px;
+            border-right: none !important;
+        }
+        input:focus{
+            outline: none !important;
+        }
+    </style>
+</head>
+<meta charset="utf-8">
+<body style="background-image: url('/static/blog_1.jpg'); background-size: cover;">
+	<div class="container">
+        <nav arial-label ="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white">
+                <li class="breadcrumb-item">
+                    <a href="{{ url_for('home') }}"> Back </a>
+                </li>
+                 <li class="breadcrumb-item active">
+                     Log In 
+                </li>
+            </ol>
+        </nav>
+        <div class="container" style="background-color: white; margin-top: 50px; margin-bottom: 50px;">
+            <div className="row">
+                <div className="col-12 col-md-8 mx-auto" style="padding-top: 30px;">
+                    <h3 style="font-weight: bolder">Log In</h3>
+                    <hr/>
+                    <form method="POST" action="" 
+                    class="justify-content-center"
+                    >
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            {{ form.email.label(class="form-control-label") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            <small class="text-muted ml-2">
+                                <a href="#">Forgot Password?</a>
+                            </small>
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control form-control-lg") }} 
+                            {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-md btn-primary w-100") }}
+                        </div>
+                        
+                    </form>
+                </div>
+        </div>
+            <div class="container pt-3 text-center" style="padding-bottom: 30px;">
+                <small class="text-muted ">
+                    Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+                </small>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+
+    <script  type="text/javascript" src="/static/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="/static/popper.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+</body>
+</html>

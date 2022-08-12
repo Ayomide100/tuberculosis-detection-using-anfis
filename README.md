@@ -9,4 +9,4 @@ Activate the virtual env using *conda activate* followed by the env name <br/>
 Install and connect matlab.engine [(https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html)] <br/>
 pip install *requirements.txt*, inside the miniconda prompt <br/>
 Switch to the cloned github directory <br/>
-Run ### flask run
+Run *flask run*

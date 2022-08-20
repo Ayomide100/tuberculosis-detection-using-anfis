@@ -9,7 +9,7 @@ Activate the virtual env using *conda activate* followed by the env name <br/>
 Install and connect matlab.engine <br/>
 ### Windows
 Step1 : *cd "matlabroot\extern\engines\python"* (this command should be run in the windows cmd as an admin) <br/>
-Step2: run the command *python setup.py install* after running step one
+Step2: run the command *python setup.py install* after running step one <br/>
 pip install *requirements.txt*, inside the miniconda prompt <br/>
 Switch to the cloned github directory <br/>
 Run *flask run*

@@ -178,6 +178,7 @@ popupmenu11 = popupmenu11{get(handles.popupmenu11,'Value')};
 genOpt.InputMembershipFunctionType = popupmenu11;
 in_fis = genfis(x,y,genOpt);
 out_fis = anfis(a,in_fis,40)
+showrule(in_fis)
 set(handles.text7,'Visible', 'On');
 set(handles.text7,'String', 'ANFIS MODEL TRAINED SUCCESSFULLY !!!');
 set(handles.pushbutton5,'Visible', 'On');
@@ -446,11 +447,11 @@ output = evalfis(x_test,out_fis);
 output = abs(round(output));
 
 if output == 0
-    output = 'Tuberculosis presence is high chance(1)';
+    output = 'Tuberculosis presence is high';
 elseif output == 1
-    output = 'Tuberculosis presence is low chance(1)';
+    output = 'Tuberculosis presence is low';
 else
-   output = 'Tuberculosis presence is moderate chance(1)'
+   output = 'Tuberculosis presence is moderate'
 end
 
 set(handles.text22,'Visible', 'On');

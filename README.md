@@ -7,7 +7,7 @@ Download and install miniconda <br/>
 create a virtual environment in miniconda from the command prompt <br/>
 Activate the virtual env using *conda activate* followed by the env name <br/>
 ### Install and connect matlab.engine <br/>
-Windows
+*Windows* <br/>
 Step1 : *cd "matlabroot\extern\engines\python"* (this command should be run in the windows cmd as an admin) <br/>
 Step2: run the command *python setup.py install* after running step one <br/> <br/>
 pip install *requirements.txt*, inside the miniconda prompt <br/>

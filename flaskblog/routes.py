@@ -26,9 +26,15 @@ def register():
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
+        print(form)
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         db.create_all()
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        user = User(
+        patient_name=form.patient_name.data, 
+        email=form.email.data, 
+        dob=form.dob.data, 
+        contact_address=form.contact_address.data, 
+        password=hashed_password)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
